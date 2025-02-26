@@ -1,0 +1,77 @@
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <title>Responsive Navigation Menu Bar</title>
+            <link rel="stylesheet" href="lms.css">
+
+            <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        </head>
+        <body>
+            <nav>
+                <div class="navbar">
+                    
+                    <div class="menu"></div>
+                        <ul class="nav-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Event</a></li>
+                            <li><a href="#">Packegs</a></li>
+                        </ul>
+                        <span class="logo"><a herf="#">VIBEMAKERS</a></span>
+                        <ul class="nav-links">
+                            <li><a href="#">Bookings</a></li>
+                            <li><a href="#">Hotels</a></li>
+                            <li><a href="#">Photo Studeo</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                  <div class="Darklight-searchBox">
+                  <div class="dark-light">
+                    <i class='bx bx-moon moon'  ></i>
+                    <i class='bx bx-sun sun' ></i>
+                </div>
+                    <div class="searchBox">
+                        <i class='bx bx-x cancel' ></i>
+                        <i class='bx bx-search search' ></i>
+                      </div>
+                  </div>
+                  
+                 
+                </div>
+                <button class="login-btn" onclick="openLoginModal()">Login</button>
+                </div>
+                
+
+
+            </nav>
+            
+            <div id="login-modal" class="login-modal">
+                <div class="login-container">
+                    <h2>Login</h2>
+                    <form id="login-form">
+                        <div class="input-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" placeholder="Enter username" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Enter password" required>
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                        <button type="button" class="close-btn" onclick="closeLoginModal()">Close</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img src="party.jpg" alt="Centered Image" width="500">
+                <div class="image-text">Welcome to VIBEMAKERS</div>
+                <div class="image-text2">Crafting the perfect party atmosphere</div>
+            </div>
+           
+            <script src= "script.js">
+            </script>
+        </body>
+    </html>
