@@ -131,8 +131,8 @@ nav .navbar .logo a::before{
     opacity: 0;
     transition: all 0.3s ease;
 }
-.nav-links li :hover a::before{
-    opacity: 1;   
+.nav-links li a:hover::before {
+    opacity: 1;
 }
 .navbar .Darklight-searchBox{
     display: flex;
