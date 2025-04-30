@@ -1,2 +1,2 @@
-# party-management
-new repo
+# party-management-backend
+New repo
