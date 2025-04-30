@@ -145,12 +145,45 @@
     </form>
   </div>
 
-  <script>
-    document.getElementById('reservationForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+
+    <script>
+  document.getElementById('reservationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData();
+
+    formData.append('customerId', document.getElementById('customerId').value);
+    formData.append('partyType', document.getElementById('partyType').value);
+    formData.append('date', document.getElementById('date').value);
+    formData.append('fromTime', document.getElementById('fromTime').value);
+    formData.append('toTime', document.getElementById('toTime').value);
+    formData.append('musicPartnerId', document.getElementById('musicPartnerId').value);
+    formData.append('photoVideoId', document.getElementById('photoVideoId').value);
+    formData.append('albumStatus', document.getElementById('albumStatus').value);
+    formData.append('photoDuration', document.getElementById('photoDuration').value);
+    formData.append('foodPartnerId', document.getElementById('foodPartnerId').value);
+    formData.append('foodCategory', document.getElementById('foodCategory').value);
+    formData.append('guests', document.getElementById('guests').value);
+    formData.append('description', document.getElementById('description').value);
+    formData.append('theme', document.getElementById('theme').value);
+    formData.append('venueid', document.getElementById('venueid').value);
+
+    fetch('submit_reservation.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.text())
+    .then(response => {
       alert('Reservation submitted successfully!');
-      // Here you can add code to save or process the form data
+      document.getElementById('reservationForm').reset();
+    })
+    .catch(error => {
+      console.error('Submission failed:', error);
+      alert('Failed to submit reservation.');
     });
-  </script>
+  });
+</script>
+
+  
 </body>
 </html>
