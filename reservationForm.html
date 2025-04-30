@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reservation Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('party.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      background: rgba(14, 5, 5, 0.87);
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00000060;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+      color: white;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+    .btn-secondary {
+  background-color: #04070a;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #6fb4e9;
+  border-color: #545b62;
+}
+
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Reservation Form</h2>
+    <form id="reservationForm">
+      <label for="customerId">Customer ID:</label>
+      <input type="text" id="customerId" required>
+
+      <label for="partyType">Party Type:</label>
+      <select id="partyType" required>
+        <option value="">Select</option>
+        <option>Wedding</option>
+        <option>Homecoming</option>
+        <option>Birthday</option>
+        <option>Engagement</option>
+        <option>Other</option>
+      </select>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required>
+
+      <label>From:</label>
+      <input type="time" id="fromTime" required>
+
+      <label>To:</label>
+      <input type="time" id="toTime" required>
+
+      <label for="musicPartnerId">Music Partner ID:</label>
+      <input type="text" id="musicPartnerId">
+
+      <label for="photoVideoId">Photography & Videography Partner ID:</label>
+      <input type="text" id="photoVideoId">
+
+      <label for="albumStatus">Album Status:</label>
+      <select id="albumStatus" required>
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label for="photoDuration">Photo/Video Duration (in hours):</label>
+      <input type="number" id="photoDuration" min="1" max="24">
+
+      <label for="foodPartnerId">Food Partner ID:</label>
+      <input type="text" id="foodPartnerId">
+
+      <label for="foodCategory">Food Category:</label>
+      <select id="foodCategory" required>
+        <option value="">Select</option>
+        <option>Breakfast</option>
+        <option>Lunch</option>
+        <option>High Tea</option>
+        <option>Dinner</option>
+      </select>
+
+      <label for="guests">Number of Guests:</label>
+      <input type="number" id="guests" min="1" required>
+
+      <label for="description">Description:</label>
+      <textarea id="description" rows="3"></textarea>
+
+      <label for="theme">Theme:</label>
+      <input type="text" id="theme">
+
+      <label for="venueid">Venue ID:</label>
+      <input type="text" id="venueid">
+      
+
+      <button type="submit">Submit Reservation</button>
+       <!-- Back to Home Button -->
+  <div class="text-center mt-4">
+    <a href="newWeb.html" class="btn btn-secondary">Back to Home</a>
+  </div>
+</div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('reservationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Reservation submitted successfully!');
+      // Here you can add code to save or process the form data
+    });
+  </script>
+</body>
+</html>
