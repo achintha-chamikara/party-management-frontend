@@ -1,6 +1,9 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "party_planning_test"; // Make sure this matches the DB name you used
 
-include('../../Include/dbconnection.php');
 // Connect to MySQL
 $conn = new mysqli($servername, $username, $password, $database);
 
