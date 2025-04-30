@@ -1,7 +1,7 @@
 <?php
 
 include('../../Include/dbconnection.php');
-$sql = "SELECT * FROM theme";
+$sql = "SELECT * FROM venue";
 $result = $conn->query($sql);
 ?>
 
@@ -12,11 +12,11 @@ $result = $conn->query($sql);
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
   <title>Display Boxes</title>
-
+ 
 
 </head>
 <body>
-  <h1>THEME</h1>
+  <h1>venue</h1>
 <?php if ($result->num_rows > 0): ?>
   <?php while ($row = $result->fetch_assoc()): ?>
     <div class="database-box" onclick="saveAndRedirect(<?= $row['id'] ?>)">
@@ -28,9 +28,9 @@ $result = $conn->query($sql);
 <?php endif; ?>
 
 <script>
-function saveAndRedirect(themeId) {
+function saveAndRedirect(venueId) {
   const formData = new FormData();
-  formData.append('theme_id', themeId);
+  formData.append('venue_id', venueId);
 
   fetch('saveClick.php', {
     method: 'POST',
@@ -38,7 +38,7 @@ function saveAndRedirect(themeId) {
   })
   .then(response => {
     if (response.ok) {
-      window.location.href = "../vendor-p/displayBoxes.php"; 
+      window.location.href = "../date-p/date.php"; 
     } else {
       alert('Error saving click.');
     }
@@ -50,3 +50,8 @@ function saveAndRedirect(themeId) {
 
 </body>
 </html>
+
+
+
+
+
