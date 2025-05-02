@@ -1,7 +1,7 @@
 <?php
 
 include('../../Include/dbconnection.php');
-$sql = "SELECT * FROM theme";
+$sql = "SELECT * FROM vendor";
 $result = $conn->query($sql);
 ?>
 
@@ -12,25 +12,30 @@ $result = $conn->query($sql);
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
   <title>Display Boxes</title>
-
+  
 
 </head>
 <body>
-  <h1>THEME</h1>
+  <h1>VENDOR</h1>
 <?php if ($result->num_rows > 0): ?>
   <?php while ($row = $result->fetch_assoc()): ?>
-    <div class="database-box" onclick="saveAndRedirect(<?= $row['theme_id'] ?>)">
+    <div class="database-box" onclick="saveAndRedirect(<?= $row['vendor_id'] ?>)">
       <?= $row['name'] ?>
-        <h5><?= $row['description'] ?></h5>
+        <h5><?= $row['description'] ?><br>
+      <?= $row['fee'] ?><br>
+      <?= $row['Email'] ?> <br>
+      <?= $row['category'] ?>      
+      </h5>
+
 
     </div>
   <?php endwhile; ?>
 <?php endif; ?>
 
 <script>
-function saveAndRedirect(themeId) {
+function saveAndRedirect(vendorId) {
   const formData = new FormData();
-  formData.append('theme_id', themeId);
+  formData.append('vendor_id', vendorId);
 
   fetch('saveClick.php', {
     method: 'POST',
@@ -38,7 +43,7 @@ function saveAndRedirect(themeId) {
   })
   .then(response => {
     if (response.ok) {
-      window.location.href = "../vendor-p/displayBoxes.php"; 
+      window.location.href = "../vendor-p/displayBoxes.php";
     } else {
       alert('Error saving click.');
     }

@@ -21,7 +21,10 @@ $result = $conn->query($sql);
   <?php while ($row = $result->fetch_assoc()): ?>
     <div class="database-box" onclick="saveAndRedirect(<?= $row['id'] ?>)">
       <?= $row['name'] ?>
-        <h5><?= $row['description'] ?></h5>
+        <h5><?= $row['description'] ?>
+        <br>
+        <?= $row['website'] ?>
+      </h5>
 
     </div>
   <?php endwhile; ?>

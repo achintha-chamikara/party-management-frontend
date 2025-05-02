@@ -264,7 +264,7 @@ $feedbackCount = getCount('feedback', $conn);
         <div class="dashboard-box">
             <i class="fa fa-taxi" aria-hidden="true"></i>
             <h3>Venue</h3>
-            <a href="./viewVennue.php" class="manage">Check Venue</a>
+            <a href="./viewVenue.php" class="manage">Check Venue</a>
         </div>
 
         <div class="dashboard-box">
