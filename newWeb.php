@@ -103,7 +103,7 @@
   
 
   function goToLogin() {
-    window.location.href = "logpage.html";
+    window.location.href = "logpage.php";
   }
 
 
