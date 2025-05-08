@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2025 at 12:08 PM
+-- Generation Time: May 08, 2025 at 12:22 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,8 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `First_Name`, `Last_Name`, `UserName`, `Password`) VALUES
-(1, 'James', 'Carter', 'admin123', '$2y$10$19G8S0K1lfLVRdjANUGxRu/p6X5Rp3PRy4YvsNE3wOgso0cCjc.kC'),
-(2, 'Sajeevan', 'Shan', 'Sajeevanshan', '$2y$10$M8F0n/Pnm/GO43Lezb36B.Izwts09QHZeKjHMnK22Ck1w3bSCMlWS');
+(1, 'James', 'Carter', 'admin123', '$2y$10$19G8S0K1lfLVRdjANUGxRu/p6X5Rp3PRy4YvsNE3wOgso0cCjc.kC');
 
 -- --------------------------------------------------------
 
@@ -66,7 +65,6 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`cus_id`, `First_Name`, `Last_Name`, `Age`, `UserName`, `Password`, `Email`, `phone_number`, `admin_id`) VALUES
-(1, 'student\r\n\r\n', NULL, 23, 'USJ', 'CSC209', 'student123@gmail.com', 765648392, 1),
 (4, 'Savi', 'Sathsarani', 23, 'savindya', '$2y$10$cDVe2E82lk5PjOMmpBtmtO3whB95JJmLr0MuQz4kXmeq4y7FJC7Q.', 'savindya7874@gmail.com', 2147483647, 1);
 
 -- --------------------------------------------------------
@@ -86,7 +84,7 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`feedback_id`, `cus_id`, `message`) VALUES
-(1, 1, 'The party planning site made organizing my event a breeze! From selecting vendors to coordinating details, everything was seamless. Highly recommend for stress-free party planning.');
+(1, 4, 'The party planning site made organizing my event a breeze! From selecting vendors to coordinating details, everything was seamless. Highly recommend for stress-free party planning.');
 
 -- --------------------------------------------------------
 
@@ -116,7 +114,7 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`res_id`, `date`, `time_from`, `time_to`, `party_type`, `description`, `no_of_guests`, `cus_id`, `vendor_music_id`, `vendor_photo_id`, `vendor_food_id`, `venue_id`, `theme_id`, `admin_id`) VALUES
-(1, '2025-04-30', '13:30:00', '15:30:00', 'birthday', 'I want to plan unforgettable bday party with my friends, I\'m a teenager', 5, 1, 3, 2, 1, 1, 1, 1);
+(1, '2025-04-30', '13:30:00', '15:30:00', 'birthday', 'I want to plan unforgettable bday party with my friends, I\'m a teenager', 5, 4, 3, 2, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -257,7 +255,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `cus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cus_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `feedback`
