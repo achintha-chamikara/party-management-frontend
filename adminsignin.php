@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'dbconnect.php'; // this should be your database connection file
+require 'Include/dbconnection.php'; // this should be your database connection file
 
 $errors = [];
 $success = false;
@@ -12,24 +12,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (empty($username) || empty($password)) {
         $errors[] = "Please enter both Admin ID and Password.";
     } else {
-        $stmt = $conn->prepare("SELECT * FROM admin WHERE UserName = :username");
-        $stmt->bindParam(':username', $username);
+        // Use named placeholders for safety and clarity
+        $stmt = $conn->prepare("SELECT * FROM admin WHERE UserName = ?");
+        $stmt->bind_param("s", $username);
         $stmt->execute();
-        $admin = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->get_result();
+        $admin = $result->fetch_assoc();
 
-        // Password checking (plain or hashed)
-        if ($admin && password_verify($password, $admin['Password'])) {
+         // Verify user and password
+         if ($admin && password_verify($password, $admin['Password'])) {
             $_SESSION['admin'] = $admin['UserName'];
-            $success = true;
-            echo "<script>
-                alert('Welcome Admin, " . htmlspecialchars($admin['UserName']) . "!');
-                setTimeout(function() {
-                    window.location.href = 'dashboard.php';
-                }, 1000);
-            </script>";
+            header("Location: /party-management-frontend/Backend/admindashboard.php");
             exit;
         } else {
-            $errors[] = "Invalid Admin ID or Password.";
+            $errors[] = "Invalid username or password.";
         }
     }
 }
@@ -124,16 +120,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </script>
 </head>
 <body>
+
     <div class="login-container">
         <h2>Admin Login</h2>
         <form action="adminsignin.php" method="POST">
             <div class="input-group">
-                <label for="admin_id">Admin ID</label>
-                <input type="text" name="admin_id" id="admin_id" required>
+            <label for="username">Username</label>
+                <input type="text" id="UserName" name="username"  required>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" required>
+                <input type="password"  id="Password" name="password" required>
             </div>
             <div class="input-group">
                 <button type="submit">Sign In</button>
@@ -146,6 +143,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
             <?php endif; ?>
         </form>
+
+        <?php
+        include 'Backend/back.php'
+        ?>
     </div>
+    
+    
 </body>
 </html>

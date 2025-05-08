@@ -1,5 +1,5 @@
 <?php
-require 'dbconnect.php';
+require 'Include/dbconnection.php';
 
 $errors = [];
 $success = "";
@@ -24,36 +24,44 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $errors[] = "Passwords do not match.";
 } else {
     // Check for duplicate username or email
-    $stmt = $conn->prepare("SELECT * FROM customer WHERE UserName = :username OR Email = :email");
-    $stmt->execute(['username' => $username, 'email' => $email]);
+    $stmt = $conn->prepare("SELECT * FROM customer WHERE UserName = ? OR Email = ?");
+    $stmt->bind_param("ss", $username, $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if ($stmt->rowCount() > 0) {
+    if ($result->num_rows > 0) {
         $errors[] = "Username or email already exists.";
     } else {
         // Proceed with insertion
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $cus_id = uniqid('cus_');
+        $cus_id = uniqid('cus_id');
+
+        $admin_id = 1;
 
         $insert = $conn->prepare("
             INSERT INTO customer (cus_id, First_Name, Last_Name, Age, UserName, Password, Email, phone_number, admin_id)
-            VALUES (:cus_id, :first_name, :last_name, :age, :username, :password, :email, :phone, NULL)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)
         ");
+        $insert->bind_param(
+            "ssssssssi",
+            $cus_id,
+            $first_name,
+            $last_name,
+            $age,
+            $username,
+            $hashedPassword,
+            $email,
+            $phone,
+            $admin_id
+        );
 
-        $insert->execute([
-            'cus_id' => $cus_id,
-            'first_name' => $first_name,
-            'last_name' => $last_name,
-            'age' => $age,
-            'username' => $username,
-            'password' => $hashedPassword,
-            'email' => $email,
-            'phone' => $phone
-        ]);
-
-       
-        $success = "Account created successfully! <a href='signing.php'>Log in here</a>.";
-        header("Location: signing.php");
-        exit;
+        if ($insert->execute()) {
+            $success = "Account created successfully! <a href='signing.php'>Log in here</a>.";
+            header("Location: signing.php");
+            exit;
+        } else {
+            $errors[] = "Error inserting data: " . $insert->error;
+        }
     }
 }
 }
@@ -142,6 +150,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </footer>
         </div>
     </main>
+
+    <?php
+        include 'Backend/back.php'
+        ?>
 
     <script>
         const themeToggle = document.getElementById('themeToggle');

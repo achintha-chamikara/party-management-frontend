@@ -30,7 +30,7 @@ if (!isset($_SESSION['user'])) {
                     </div>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="abouts.html">About Us</a></li>
                     <li><a href="#">Event</a></li>
                     <li><a href="#">Packages</a></li>
                     <li><a href="#">Bookings</a></li>
@@ -59,7 +59,7 @@ if (!isset($_SESSION['user'])) {
         </nav>
         
         <div class="image-container">
-            <img src="party.jpg" alt="Centered Image" width="500">
+            <img src="Backend/images/party.jpg" alt="Centered Image" width="500">
             <div class="image-text">Welcome to VIBEMAKERS</div>
             <div class="image-text2">Crafting the perfect party atmosphere</div>
         </div>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'dbconnect.php';
+require 'Include/dbconnection.php'; // Make sure this creates a MySQLi connection
 
 $errors = [];
 $success = false;
@@ -12,20 +12,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (empty($username) || empty($password)) {
         $errors[] = "Please enter both username and password.";
     } else {
-        $stmt = $conn->prepare("SELECT * FROM customer WHERE UserName = :username");
-        $stmt->bindParam(':username', $username);
+        $stmt = $conn->prepare("SELECT * FROM customer WHERE UserName = ?");
+        $stmt->bind_param("s", $username);
         $stmt->execute();
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
 
         if ($user && password_verify($password, $user['Password'])) {
             $_SESSION['user'] = $user['UserName'];
-            $success = true;
-            echo "<script>
-                alert('Welcome, " . htmlspecialchars($user['UserName']) . "!');
-                setTimeout(function() {
-                    window.location.href = 'dashboard.php';
-                }, 1500);
-            </script>";
+            header("Location: services.html");
             exit;
         } else {
             $errors[] = "Invalid username or password.";
@@ -81,15 +76,14 @@ $errors = []; // Example error list
             <?php endif; ?>
 
             <!-- Sign-in Form -->
-            <form id="signin-form" action="signin.php" method="POST">
-                <label for="email">Email address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            <form id="signin-form" action="signing.php" method="POST">
+                
 
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter username" required>
+                <input type="text" id="UserName" name="username" placeholder="Enter username" required>
 
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter password" required>
+                <input type="password" id="Password" name="password" placeholder="Enter password" required>
 
                 <button type="submit">Continue</button>
             </form>
@@ -98,7 +92,7 @@ $errors = []; // Example error list
 
             <!-- Footer -->
             <footer>
-                <p>By signing in or creating an account, you agree with our 
+                <
                     <a href="#">Terms & conditions</a> and 
                     <a href="#">Privacy statement</a>.
                 </p>
@@ -123,7 +117,7 @@ $errors = []; // Example error list
             sunIcon.style.display = 'inline-block';
         } else {
             sunIcon.style.display = 'none';
-        }
+p>By signing in or creating an account, you agree with our         }
 
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');

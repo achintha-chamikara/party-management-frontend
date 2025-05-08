@@ -4,8 +4,8 @@ form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const feedbackData = {
-        eventId: document.getElementById('eventId').value,
-        feedback: document.getElementById('feedback').value
+        eventId: document.getElementById('feedback_id').value,
+        feedback: document.getElementById('message').value
     };
 
     try {

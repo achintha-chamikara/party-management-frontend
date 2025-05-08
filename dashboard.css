@@ -37,12 +37,12 @@
 } 
 
 :root {
-    --body-color: #e4e9f7;
-    --nav-color: #4070f4;
+    --body-color: #f5d0f7;
+    --nav-color: #620a5e;
     --side-nav: #010718;
     --text-color: #FFF;
     --search-bar: #f2f2f2;
-    --search-text: #010718;
+    --search-text: #170118;
 }
 
 [data-theme="dark"] {
@@ -241,7 +241,7 @@ img {
 }
 
 .signin-btn:hover, .register-btn:hover {
-    background-color: #3366cc;
+    background-color: #b233cc;
 }
 
 .close-btn:hover {

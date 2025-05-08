@@ -4,16 +4,19 @@ session_start();
 
 include '../Include/dbconnection.php';
 
-if (isset($_SESSION['ad_id'])) {
+$username = 'Admin'; 
 
-    $adminId = $_SESSION['ad_id'];
-    $sql = "SELECT name FROM admin WHERE ad_id = $adminId";
+if (isset($_SESSION['admin_id'])) {
+
+    $adminId = $_SESSION['admin_id'];
+    $sql = "SELECT Last_Name FROM admin WHERE admin_id = $adminId";
     $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
+    
+    if ($result && $result->num_rows > 0) {
 
         $row = $result->fetch_assoc();
-        $userName = $row['Last_Name'];
+        $username = $row['Last_Name'];
     }
 }
 
@@ -193,7 +196,8 @@ $feedbackCount = getCount('feedback', $conn);
 
 <body>
 
-    <h1>Welcome, <?php echo $userName ?></h1>
+<h1>Welcome, <?php echo htmlspecialchars($username); ?></h1>
+
 
     <div class="dashboard-container">
         <div class="dashboard-box">
@@ -271,11 +275,14 @@ $feedbackCount = getCount('feedback', $conn);
             <i class="fa fa-address-book" aria-hidden="true"></i>
 
             <h3>New Admin</h3>
-            <a href="./adminRegister.php" class="manage">Create New Admin</a>
+            <a href="./registeradmin.php" class="manage">Create New Admin</a>
         </div>
     </div>
 
-    <a href="../Pages/Login-Admin/index.php" class="logout-link">Logout</a>
+    <a href="./logpage.php" class="logout-link">Logout</a>
+    <?php
+        include './back.php'
+        ?>
 </body>
 
 </html>
