@@ -23,8 +23,8 @@
     <div class="navbar-toggle" id="menuToggle">&#9776;</div>
 
     <div class="navbar-links" id="navLinks">
-      <a href="abouts.html">About</a>
-      <a href="customer-feedback-form.php">Feedback</a>
+      <a href="Folder/abouts.php">About</a>
+      <a href="Folder/customer-feedback-form.php">Feedback</a>
       <button class="login-btn" onclick="goToLogin()">Login</button>
     </div>
   </nav>
@@ -79,7 +79,7 @@
             <h3>Quick Links</h3>
              <ul class="list">
                 <li><a href="">Home</a></li>
-                <li><a href="abouts.html">About</a></li>
+                <li><a href="Folder/abouts.php">About</a></li>
                 <li><a href="">Services</a></li>
                 <li><a href="">Products</a></li>
              </ul>
@@ -103,7 +103,7 @@
   
 
   function goToLogin() {
-    window.location.href = "logpage.php";
+    window.location.href = "Folder/logpage.php";
   }
 
 

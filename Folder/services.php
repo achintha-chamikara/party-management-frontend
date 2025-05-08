@@ -8,7 +8,7 @@
       margin: 0;
       padding: 20px;
       font-family: Arial, sans-serif;
-      background-image: url('s2.jpg');
+      background-image: url('../Backend/images/s2.jpg');
       background-size: cover;
     }
 
@@ -105,7 +105,7 @@
 
   <div class="card-container">
     <div class="card">
-      <img src="Backend/images/rainbowfirstbirthdayparty.jpg" alt="Theme">
+      <img src="../Backend/images/rainbowfirstbirthdayparty.jpg" alt="Theme">
       <div class="card-content">
         <h3>THEME</h3>
         <p>Choose your favourite theme.</p>
@@ -116,7 +116,7 @@
     </div>
 
     <div class="card">
-      <img src="Backend/images/001.jpg" alt="Venue">
+      <img src="../Backend/images/001.jpg" alt="Venue">
       <div class="card-content">
         <h3>VENUE</h3>
         <p>choose your favourite place.</p>
@@ -127,7 +127,7 @@
     </div>
 
     <div class="card">
-      <img src="Backend/images/party-decorations.jpg" alt="Vendors">
+      <img src="../Backend/images/party-decorations.jpg" alt="Vendors">
       <div class="card-content">
         <h3>VENDORS</h3>
         <p>Choose vendord for make your day more beautiful.</p>
@@ -145,7 +145,7 @@
     </div>
 
     <?php
-        include 'Backend/back.php'
+        include '../Backend/back.php'
         ?>
   
   <script>

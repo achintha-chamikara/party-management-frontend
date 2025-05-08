@@ -8,7 +8,7 @@
       margin: 0;
       padding: 20px;
       font-family: Arial, sans-serif;
-      background-image: url('s2.jpg');
+      background-image: url('../Backend/images/s2.jpg');
       background-size: cover;
     }
 
@@ -76,7 +76,7 @@
 
   <div class="card-container">
     <div class="card">
-      <img src="Backend/images/admin.jpg" alt="Theme">
+      <img src="../Backend/images/admin.jpg" alt="Theme">
       <div class="card-content">
        
       </div>
@@ -86,7 +86,7 @@
     </div>
 
     <div class="card">
-      <img src="Backend/images/user.jpg" alt="Venue">
+      <img src="../Backend/images/user.jpg" alt="Venue">
       <div class="card-content">
        
       </div>

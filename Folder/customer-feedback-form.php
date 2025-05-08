@@ -6,7 +6,7 @@
 
   <style>
     body {
-      background-image: url('Backend/images/party.jpg');
+      background-image: url('../Backend/images/party.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -51,7 +51,7 @@
   <div class="form-container">
     <h1>Customer Feedback</h1>
 
-    <form action="submit_feedback.php" method="POST">
+    <form action="Folder/submit_feedback.php" method="POST">
       
         <label for="name">Your Name:</label><br>
         <input type="text" name="Last_Name" id="Last_Name" required><br><br>
@@ -61,7 +61,7 @@
       <button type="submit">Submit</button> <br><br>
            
   <?php
-        include 'Backend/back.php'
+        include '../Backend/back.php'
         ?>
 
     </form>

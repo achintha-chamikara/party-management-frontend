@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>THEMES</title>
+  <title> VENDORS</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #eef2f3;
       padding: 20px;
-      background-image: url('s2.jpg');
+      background-image: url('../Backend/images/s2.jpg');
       background-size: cover;
       
     }
@@ -54,14 +54,17 @@
 
 <body>
 
-<h1>THEMES</h1>
+<h1>VENDORS</h1>
 
 <table id="themeTable">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Description</th>
+      <th>VENDOR ID</th>
+      <th>NAME</th>
+      <th>CATEGORY</th>
+      <th>FEE</th>
+      <th>DESCRIPTION</th>
+      <th>EMAIL</th>
     </tr>
   </thead>
   <tbody>
@@ -70,11 +73,11 @@
 </table>
 
 <?php
-        include 'Backend/back.php'
+        include '../Backend/back.php'
         ?>
 
 <script>
-  fetch('themeData.php')
+  fetch('vendorsData.php')
     .then(response => response.json())
     .then(data => {
       const tbody = document.querySelector('#themeTable tbody');
@@ -87,9 +90,12 @@
         data.forEach(item => {
           const tr = document.createElement('tr');
           tr.innerHTML = `
-            <td>${item.theme_id}</td>
+            <td>${item.vendor_id}</td>
             <td>${item.name}</td>
+            <td>${item.category}</td>
+            <td>${item.fee}</td>
             <td>${item.description}</td>
+            <td>${item.Email}</td>
           `;
           tbody.appendChild(tr);
         });

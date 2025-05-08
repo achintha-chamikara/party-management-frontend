@@ -1,5 +1,5 @@
 <?php
-include 'Include/dbconnection.php'; 
+include '../Include/dbconnection.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Last_Name']) && isset($_POST['message'])) {
     $lastName = $_POST['Last_Name'];

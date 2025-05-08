@@ -8,7 +8,7 @@
       font-family: Arial, sans-serif;
       background-color: #eef2f3;
       padding: 20px;
-      background-image: url('s2.jpg');
+      background-image: url('../Backend/images/s2.jpg');
       background-size: cover;
       
     }
@@ -71,7 +71,7 @@
 </table>
 
 <?php
-        include 'Backend/back.php'
+        include '../Backend/back.php'
         ?>
 
 <script>

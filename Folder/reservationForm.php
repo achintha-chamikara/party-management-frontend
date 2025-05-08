@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-image: url('Backend/images/party.jpg');
+      background-image: url('../Backend/images/party.jpg');
       background-size: cover;
       background-position: center;
       margin: 0;
@@ -71,7 +71,7 @@
 </head>
 <body>
 <?php
-include 'Include/dbconnection.php';
+include '../Include/dbconnection.php';
 
 // Function to fetch vendors by category
 function getVendorsByCategory($conn, $category) {
@@ -200,7 +200,7 @@ $themes = getThemes($conn);
       </form>
        
   <<?php
-        include 'Backend/back.php'
+        include '../Backend/back.php'
         ?>
 </div>
 
