@@ -280,9 +280,7 @@ $feedbackCount = getCount('feedback', $conn);
     </div>
 
     <a href="./logpage.php" class="logout-link">Logout</a>
-    <?php
-        include './back.php'
-        ?>
+    <button type="button" onclick="window.location.href='../Folder/logpage.php'" style="background-color: #0056b3; margin-top: 15px;">← Back</button>
 </body>
 
 </html>

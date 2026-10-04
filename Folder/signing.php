@@ -45,6 +45,22 @@ $errors = []; // Example error list
 
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        .back-box-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: inherit;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 20px; /* Adds space between the button and your title */
+        }
+        .back-box-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -63,6 +79,11 @@ $errors = []; // Example error list
 
     <main class="main-content">
         <div class="signin-container">
+            <div style="text-align: left;">
+                <a href="../newWeb.php" class="back-box-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
             <h2 class="signin-title">Sign in or create an account</h2>
             <p class="signin-subtitle">You can sign in using your VIBEMAKERS account to access our services.</p>
 
@@ -92,19 +113,19 @@ $errors = []; // Example error list
 
             <!-- Footer -->
             <footer>
-                <
+                <p>By signing in or creating an account, you agree with our 
                     <a href="#">Terms & conditions</a> and 
                     <a href="#">Privacy statement</a>.
                 </p>
                 <p class="copyright">
                     All rights reserved.<br>
-                    Copyright (2006 - 2025) - Booking.com™
+                    Copyright (2006 - 2026) - Vibe Makers
                 </p>
             </footer>
         </div>
     </main>
 
-    <!-- JavaScript for Theme Toggle -->
+    <!-- Corrected JavaScript for Theme Toggle -->
     <script>
         const themeToggle = document.getElementById('themeToggle');
         const moonIcon = document.querySelector('.moon-icon');
@@ -117,7 +138,7 @@ $errors = []; // Example error list
             sunIcon.style.display = 'inline-block';
         } else {
             sunIcon.style.display = 'none';
-p>By signing in or creating an account, you agree with our         }
+        }
 
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');

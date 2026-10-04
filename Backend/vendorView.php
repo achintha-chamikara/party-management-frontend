@@ -315,9 +315,7 @@
         </div>
                 <div class="b2">
                     <button onclick="openAddPopup()">Add New Vendor</button>
-                    <?php
-        include './back.php'
-        ?>
+                    <button type="button" onclick="window.location.href='admindashboard.php'" style="background-color: #0056b3; margin-top: 15px;">← Back to Dashboard</button>
                 </div>
 
         

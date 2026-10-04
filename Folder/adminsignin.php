@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
          // Verify user and password
          if ($admin && password_verify($password, $admin['Password'])) {
             $_SESSION['admin'] = $admin['UserName'];
-            header("Location: /party-management-frontend/Backend/admindashboard.php");
+            header("Location: ../Backend/admindashboard.php");
             exit;
         } else {
             $errors[] = "Invalid username or password.";
