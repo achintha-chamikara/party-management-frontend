@@ -196,9 +196,7 @@
     <?php else : ?>
         <p>No results found.</p>
     <?php endif; ?>
-    <?php
-        include './back.php'
-        ?>
+    <button type="button" onclick="window.location.href='admindashboard.php'" style="background-color: #0056b3; margin-top: 15px;">← Back to Dashboard</button>
     <!-- JS -->
     <script>
         function openDeletePopup(userId) {

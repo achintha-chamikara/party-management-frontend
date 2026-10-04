@@ -69,6 +69,29 @@
       background-color: #007bff;
       color: #fff;
     }
+
+    .back-section {
+      text-align: center;
+      margin-top: 40px;
+      width: 100%;
+    }
+
+    .back-section button {
+      background-color: transparent;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      padding: 10px 24px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .back-section button:hover {
+      background-color: #ffffff;
+      color: #000000;
+    }
   </style>
 </head>
 <body>
@@ -95,6 +118,11 @@
       </div>
 
     </div>
+
+    <!-- New Back Button Section -->
+    <div class="back-section">
+      <button onclick="goBack()">← Back to Home</button>
+    </div>
    
 
   <script>
@@ -109,6 +137,11 @@
 
     function goToUser() {
       window.location.href = "signing.php";
+    }
+
+    function goBack() {
+      // This will take the user back to the main homepage
+      window.location.href = "../newWeb.php"; 
     }
 
 

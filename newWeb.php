@@ -7,6 +7,7 @@
   <title>Custom Navbar</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <link rel="stylesheet" href="myweb.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
   
 </head>
@@ -71,9 +72,9 @@
     <div class="container">
         <div class="footer-content">
             <h3>Contact Us</h3>
-            <p>Email:Info@example.com</p>
-            <p>Phone:+121 56556 565556</p>
-            <p>Address:Your Address 123 street</p>
+            <p>Email:info@vibemakers.com</p>
+            <p>Phone:011 223 4568</p>
+            <p>Address:123 Super Street Colombo</p>
         </div>
         <div class="footer-content">
             <h3>Quick Links</h3>
@@ -85,17 +86,29 @@
              </ul>
         </div>
         <div class="footer-content">
-            <h3>Follow Us</h3>
-            <ul class="social-icons">
-             <li><a href=""><i class="fab fa-facebook"></i></a></li>
-             <li><a href=""><i class="fab fa-twitter"></i></a></li>
-             <li><a href=""><i class="fab fa-instagram"></i></a></li>
-             <li><a href=""><i class="fab fa-linkedin"></i></a></li>
-            </ul>
-            </div>
+    <h3>Follow Us</h3>
+    
+    <!-- Added flexbox properties to perfectly center the icons -->
+    <div style="margin-top: 15px; display: flex; justify-content: center; gap: 20px;">
+        <!-- Facebook Icon -->
+        <a href="https://www.facebook.com/yourprofile" style="color: white; font-size: 24px; text-decoration: none;">
+            <i class="fab fa-facebook"></i>
+        </a>
+        
+        <!-- Instagram Icon -->
+        <a href="https://www.instagram.com/yourprofile" style="color: white; font-size: 24px; text-decoration: none;">
+            <i class="fab fa-instagram"></i>
+        </a>
+        
+        <!-- Twitter/X Icon -->
+        <a href="https://twitter.com/yourprofile" style="color: white; font-size: 24px; text-decoration: none;">
+            <i class="fab fa-twitter"></i>
+        </a>
     </div>
+</div>
+        </div>
     <div class="bottom-bar">
-        <p>&copy; 2023 your company . All rights reserved</p>
+        <p>&copy; 2026 Vibe Makers . All rights reserved</p>
     </div>
 </footer>
 
